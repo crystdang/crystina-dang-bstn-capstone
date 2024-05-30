@@ -84,8 +84,6 @@ List technologies that will be used in your app, including any libraries to save
 
 List any external sources of data that will be used in your app.
 
-https://ergast.com/mrd/methods/circuits/
-https://openf1.org/#introduction
 https://documenter.getpostman.com/view/11586746/SztEa7bL
 https://api-sports.io/documentation/formula-1/v1 (circuit, driver image)
 
@@ -94,21 +92,59 @@ https://api-sports.io/documentation/formula-1/v1 (circuit, driver image)
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
 
 - Upcoming Circuit: /
-- List of Upcoming Circuits: /upcoming/circuits
-- Circuit Details: /upcoming/circuits/:id
+
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+#### Main Page
+![](/design/mockups/rough-draft-mockup-f0.jpg)
 
 ### Data
 
-Race dates - compared to current time
+A database of trivia questions will be generated with 3 levels of difficulty and either multiple choice or true/false questions.
+example:
+
+results: [
+    {
+        id: 1,
+        type: "multiple",
+        difficulty: "medium",
+        category: "rules & regulations",
+        question: "question1",
+        correct_answer: "correct_answer",
+        incorrect_answers: ["answer1", "answer2", "answer3"]
+    },
+]
 
 
 ### Endpoints
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+
+**GET /trivia**
+
+- Get questions
+
+Parameters:
+- difficulty: button specific difficulty
+- category: button specific to category
+
+
+Response:
+```
+[
+    {
+        "id": 1,
+        "difficulty": "easy",
+        "type": "multiple"
+        "category": "rules & regulations",
+        "question": "question",
+        "correct_answer": "correct answer",
+        "incorrect_answers": ["answer 1", "answer 2"]
+    },
+    ...
+]
+```
 
 ### Auth
 
@@ -146,14 +182,12 @@ Yes
 
 ## Nice-to-haves
 
+- List of Upcoming Circuits: /upcoming/circuits
+- Circuit Details: /upcoming/circuits/:id
 - Connect to friends
-- Use LLM to support comparisons
+- Use LLM to create trivia
 - Driver comparisons
 - Constructor comparisons
-
-
-Features and/or usage instructions
-Installation on developer and production environments
 
 
 REFERENCES
@@ -162,6 +196,8 @@ https://f1mix.com/
 https://en.wikipedia.org/wiki/List_of_Formula_One_circuits
 https://f1experiences.com/blog/ranked-top-10-classic-f1-circuits-to-experience
 https://www.formula1.com/en/f1-live-timing.html
+https://ergast.com/mrd/methods/circuits/
+https://openf1.org/#introduction
 
 AI
 https://huggingface.co/google/gemma-7b-it-GGUF
