@@ -1,18 +1,3 @@
-- users: new fans/ kids
-- gamify learning motorsport
-- use open source F1 API
-- create database of current rules - maybe use ai to structure multiple choice
-
-MUST
-- teach about the sport
-
-SHOULD
-- support multiple learning styles
-
-COULD
-- compare data between tracks
-
-
 # Formula Zero
 
 ## Overview
@@ -102,20 +87,6 @@ List the pages of your app with brief descriptions. You can show this visually, 
 ### Data
 
 A database of trivia questions will be generated with 3 levels of difficulty and either multiple choice or true/false questions.
-example:
-
-results: [
-    {
-        id: 1,
-        type: "multiple",
-        difficulty: "medium",
-        category: "rules & regulations",
-        question: "question1",
-        correct_answer: "correct_answer",
-        incorrect_answers: ["answer1", "answer2", "answer3"]
-    },
-]
-
 
 ### Endpoints
 
@@ -148,7 +119,7 @@ Response:
 
 ### Auth
 
-Yes
+nice to have.
 
 ## Roadmap
 
@@ -184,10 +155,9 @@ Yes
 
 - List of Upcoming Circuits: /upcoming/circuits
 - Circuit Details: /upcoming/circuits/:id
+- Login capabilities
 - Connect to friends
 - Use LLM to create trivia
-- Driver comparisons
-- Constructor comparisons
 
 
 REFERENCES
