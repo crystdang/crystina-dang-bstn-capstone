@@ -88,9 +88,9 @@ https://api-sports.io/documentation/formula-1/v1 (circuit, driver image)
 
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
 
-- Upcoming Circuit (home)
-- List of Upcoming Circuits
-- Circuit Details
+- Upcoming Circuit: /
+- List of Upcoming Circuits: /upcoming/circuits
+- Circuit Details: /upcoming/circuits/:id
 
 ### Mockups
 
@@ -99,6 +99,9 @@ Provide visuals of your app's screens. You can use tools like Figma or pictures 
 ### Data
 
 Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
+
+Race dates - compared to current time
+
 
 ### Endpoints
 
@@ -148,9 +151,10 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
 
 - Connect to friends
+- Use LLM to support comparisons
 - Driver comparisons
 - Constructor comparisons
-- Use LLM to support comparisons
+
 
 Features and/or usage instructions
 Installation on developer and production environments
