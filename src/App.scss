@@ -1,0 +1,53 @@
+@use './styles/partials/fonts' as *;
+@use './styles/partials/colors' as *;
+@use './styles/partials/mixins' as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'F1';
+  background-color: white;
+}
+
+h1 {
+  @include page-header;
+  color: black;
+  margin: 0;
+}
+
+h2 {
+  @include subheader;
+  color: black;
+  margin: 0;
+}
+
+h3 {
+  @include labels-links-buttons;
+  margin: 0;
+}
+
+h4 {
+  @include table-header;
+  color: $slate;
+  margin: 0;
+  padding-bottom: 0.25rem;
+}
+
+p, span, a {
+  @include body-medium;
+  color: black;
+  margin: 0;
+}
+
+input, button {
+  font-family: 'F1';
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

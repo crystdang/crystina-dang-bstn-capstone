@@ -1,0 +1,80 @@
+@use './breakpoints' as *;
+
+@mixin font($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+@font-face {
+  font-family: 'F1';
+  font-weight: 700;
+  src: url('../../assets/fonts/Formula1-Black.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'F1';
+  font-weight: 600;
+  src: url('../../assets/fonts/Formula1-Bold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'F1';
+  font-weight: 300;
+  src: url('../../assets/fonts/Formula1-Regular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'F1';
+  font-weight: 200;
+  src: url('../../assets/fonts/Formula1-Wide.ttf') format("truetype");
+}
+
+@mixin page-header {
+  @include font(1.75rem, 2.25rem, 600);
+  @include tablet {
+    @include font(2rem, 2.5rem, 600);
+  }
+}
+
+@mixin subheader {
+  @include font(1.25rem, 1.75rem, 600);
+  @include tablet {
+    @include font(1.5rem, 2rem, 600);
+  }
+}
+
+@mixin labels-links-buttons {
+  @include font(0.8125rem, 1.25rem, 400);
+  @include tablet {
+    @include font(0.875rem, 1.375rem, 400);
+  }
+}
+
+@mixin table-header {
+  @include font(0.6875rem, 1rem, 600);
+  @include tablet {
+    @include font(0.75rem, 1.125rem, 600);
+  }
+}
+
+@mixin body-large {
+  @include font (0.9375rem, 1.625rem, 400);
+  @include tablet {
+    @include font(1rem, 1.75rem, 400);
+  }
+}
+
+@mixin body-medium {
+  @include font(0.8125rem, 1.25rem, 400);
+  @include tablet {
+    @include font(0.875rem, 1.375rem, 400);
+  }
+}
+
+@mixin body-small {
+  @include font(0.6875rem, 1rem, 400);
+  @include tablet {
+    @include font(0.75rem, 1.125rem, 400)
+  }
+}
