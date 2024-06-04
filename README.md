@@ -67,8 +67,6 @@ As a user, I want to be rewarded for learning
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
-
 - React
 - MySQL
 - Express
@@ -172,7 +170,7 @@ Yes
 
 - Feature: View circuit
     - Implement circuit details page
-    - Create GET /cafes/:id 
+    - Create GET /circuits/:id 
 
 - Feature: Home page
 
