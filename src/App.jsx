@@ -1,7 +1,7 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from './pages/MainPage/MainPage';
-import MtlTrack from './assets/images/SVG/mtl-circuit-bare.svg';
+import MtlTrack from './assets/images/SVG/track-rainbow-turns.svg';
 
 function App() {
   return (
