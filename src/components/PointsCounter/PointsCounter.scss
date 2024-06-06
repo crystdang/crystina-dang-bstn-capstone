@@ -3,12 +3,13 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/mixins" as *;
 
-.main-page {
+.points {
 
   &__main {
-
-  }
-  &__main-content {
-    display: flex;
+    @include containers($med-black);
+    // height: 20rem;
+    // width: 20rem;
+    flex-grow: 1;
+    background-color: green;
   }
 }

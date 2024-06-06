@@ -3,12 +3,14 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/mixins" as *;
 
-.main-page {
+.header {
 
-  &__main {
+  @include flex(center, center);
 
-  }
-  &__main-content {
-    display: flex;
+  min-height: 20rem;
+
+  &__logo {
+    width: 60vw;
+    
   }
 }

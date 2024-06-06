@@ -3,12 +3,11 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/mixins" as *;
 
-.main-page {
+.footer {
 
-  &__main {
-
-  }
-  &__main-content {
-    display: flex;
+  &__text {
+    padding: 4rem 0;
+    text-align: center;
+    color: $hi-white;
   }
 }

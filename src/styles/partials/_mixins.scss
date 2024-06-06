@@ -1,3 +1,8 @@
+$matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
+
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as *;
+
 @mixin flex($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -7,6 +12,24 @@
 @mixin flex-wrap() {
   display: flex;
   flex-wrap: wrap;
+}
+
+@mixin containers ($color) {
+  background-color: $color;
+  background-image: $matrix;
+  background-size: 400%;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 4px $off-white;
+  border-radius: 1rem;
+  padding: 3rem;
+  margin: 0 1rem;
+  @include tablet {
+    margin: 0 2rem;
+  }
+  @include desktop {
+    max-width: 65rem;
+    margin: 0 auto;
+  }
 }
 
 @mixin CTA-button($color, $font-color, $border) {

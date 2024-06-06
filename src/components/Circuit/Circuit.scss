@@ -1,0 +1,18 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/mixins" as *;
+
+.circuit {
+
+  &__main {
+  }
+
+  &__image {
+    // @include containers(null);
+    // background-image: url(../../assets/graphics/cross-grid-white-bg.svg);
+    // background-size: 300%;
+    // background-repeat: no-repeat;
+    width: 60rem;
+  }
+}
