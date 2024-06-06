@@ -1,33 +1,54 @@
 @use './breakpoints' as *;
 
+// font types
+
+@mixin font-face($font-name, $file-name, $weight) { 
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.ttf')  format('truetype');
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+@include font-face(
+    "F1",
+    "../../assets/fonts/Formula1-Black", 
+    700);
+
+@include font-face(
+    "F1",
+    "../../assets/fonts/Formula1-Bold", 
+    600);
+
+@include font-face(
+    "F1",
+    "../../assets/fonts/Formula1-Regular", 
+    300);
+
+@include font-face(
+    "F1",
+    "../../assets/fonts/Formula1-Wide", 
+    500);
+
+
+@include font-face(
+    "Titillium",
+    "../../assets/fonts/TitilliumWeb-Regular", 
+    400);
+
+@include font-face(
+    "Titillium",
+    "../../assets/fonts/TitilliumWeb-SemiBold", 
+    600);
+
+
+// font sizes
+
 @mixin font($size, $height, $weight) {
   font-size: $size;
   line-height: $height;
   font-weight: $weight;
-}
-
-@font-face {
-  font-family: 'F1';
-  font-weight: 700;
-  src: url('../../assets/fonts/Formula1-Black.ttf') format("truetype");
-}
-
-@font-face {
-  font-family: 'F1';
-  font-weight: 600;
-  src: url('../../assets/fonts/Formula1-Bold.ttf') format("truetype");
-}
-
-@font-face {
-  font-family: 'F1';
-  font-weight: 300;
-  src: url('../../assets/fonts/Formula1-Regular.ttf') format("truetype");
-}
-
-@font-face {
-  font-family: 'F1';
-  font-weight: 200;
-  src: url('../../assets/fonts/Formula1-Wide.ttf') format("truetype");
 }
 
 @mixin page-header {
@@ -78,3 +99,46 @@
     @include font(0.75rem, 1.125rem, 400)
   }
 }
+
+
+// Display headline
+// Wide 64pt
+// We use a large headline in our display fonts to grab the reader's attention.
+// Supporting headline
+// Regular 18pt
+// Our supporting headline.
+// Long-read body copy
+// Titillium 10pt
+
+// We may choose the most appropriate font to match the tone of our headline.
+// For example if we're making a
+// bold statement, maybe 'Black'
+// would communicate this effectively. If we're talking about speed or agility, 'Wide' does this well.
+// A more level-headed message, 'Bold' or 'Regular' are great for that.
+
+// In order to keep our type relationships harmonious, we generally set our Bold and Regular typography to a 12pt baseline grid.
+// This is a guide only, our pt size and leading may be increased where necessary, particularly for large communications where the pt size is 50pt or over.
+// Leading
+// Our leading works in increments that are divisible by 3 – for example – 6pt / 12pt / 24pt / 36pt, etc.
+// Note: The exception to this rule is 18pt / 15pt / 6pt which hit the baseline every other line.
+// Baseline grid
+// A 12pt grid informs our baseline grid. To create cohesion across our communications we advise aligning to this baseline wherever possible.
+// Note:
+// F1 Regular has been drawn with
+// a very large 'x-height' – in comparison Titillium has a small 'x-height' – to counter this we may wish to increase the pt size in relation to the leading to avoid a 'gappy' leading.
+
+// Paragraph Headline
+// F1 Bold
+// Point Size: 42Pt Leading: 48Pt
+// Introduction Paragraph
+// F1 Regular
+// Point Size: 18Pt Leading: 24Pt
+// Long-Read Body Text
+// Titillium Regular
+// Point Size: 15Pt Leading: 18P
+
+// F1 REGULAR - ligature alternatives
+
+// To activate Tabular lining for graphs and tables
+// The tablular glyphs are available in the Character menu > OpenType
+// > Lining Tabular Figures

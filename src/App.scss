@@ -2,49 +2,124 @@
 @use './styles/partials/colors' as *;
 @use './styles/partials/mixins' as *;
 
-body {
+// to delete tests
+.test {
+  width: 8rem;
+  height: 8rem;
+
+  &__container {
+    display: flex;
+  }
+
+  &__1 {
+    background-color: $warm-red;
+  }
+
+  &__2 {
+    background-color: $carbon-black;
+  }
+
+  &__3 {
+    background-color: $dark-black;
+  }
+
+  &__4 {
+    background-color: $med-black;
+  }
+
+  &__5 {
+    background-color: $dark-grey;
+  }
+
+  &__6 {
+    background-color: $med-grey;
+  }
+  
+  &__7 {
+    background-color: $off-white;
+  }
+}
+
+.image {
+  width: 100%;
+  
+  &__track {
+    background-image: url(../design/SVG/matrix-bg.svg);
+    background-size: cover;
+    background-color: $med-grey;
+  }
+}
+// end of tests
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+button,
+input,
+textarea {
+  position: relative;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'F1';
-  background-color: white;
+  font-family: "F1", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: $hi-white;
+  background-color: $carbon-black;
+}
+
+a {
+  text-decoration: none;
+  color: $hi-white;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 h1 {
   @include page-header;
-  color: black;
+  color: $hi-white;
+  font-weight: 700;
   margin: 0;
 }
 
 h2 {
   @include subheader;
-  color: black;
+  color: $hi-white;
+  font-weight: 200;
   margin: 0;
 }
 
 h3 {
   @include labels-links-buttons;
+  color: $hi-white;
   margin: 0;
 }
 
 h4 {
   @include table-header;
-  color: $slate;
+  color: $hi-white;
   margin: 0;
   padding-bottom: 0.25rem;
 }
 
-p, span, a {
+p, span {
   @include body-medium;
+  font-family: 'Titillium';
   color: black;
   margin: 0;
 }
 
-input, button {
-  font-family: 'F1';
-}
-
 a {
+  @extend p;
   text-decoration: none;
 
   &:hover {
