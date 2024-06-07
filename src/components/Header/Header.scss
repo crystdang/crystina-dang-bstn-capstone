@@ -5,12 +5,26 @@
 
 .header {
 
-  @include flex(center, center);
+  min-height: 5rem;
+  @include flex(flex-start, center);
 
-  min-height: 20rem;
+  &__main {
+    @include flex(flex-start, baseline);
+  }
 
   &__logo {
-    width: 60vw;
+    margin-left: 2rem;
+    width: 10vw;
     
+  }
+
+  &__future {
+    padding: 2rem;
+    color: $med-black;
+
+    &:hover {
+      color: $hi-white;
+      transform: scale(1.03);
+    }
   }
 }

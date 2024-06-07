@@ -2,46 +2,6 @@
 @use './styles/partials/colors' as *;
 @use './styles/partials/mixins' as *;
 
-// to delete tests
-.test {
-  width: 8rem;
-  height: 8rem;
-
-  &__container {
-    display: flex;
-  }
-
-  &__1 {
-    background-color: $warm-red;
-  }
-
-  &__2 {
-    background-color: $carbon-black;
-  }
-
-  &__3 {
-    background-color: $dark-black;
-  }
-
-  &__4 {
-    background-color: $med-black;
-  }
-
-  &__5 {
-    background-color: $dark-grey;
-  }
-
-  &__6 {
-    background-color: $med-grey;
-  }
-  
-  &__7 {
-    background-color: $off-white;
-  }
-}
-
-// end of tests
-
 *,
 *::before,
 *::after {
@@ -66,6 +26,10 @@ textarea {
 a {
   text-decoration: none;
   color: $hi-white;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 ul,
@@ -107,13 +71,4 @@ p, span {
   font-family: 'Titillium';
   color: black;
   margin: 0;
-}
-
-a {
-  @extend p;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-  }
 }

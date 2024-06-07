@@ -99,16 +99,16 @@
       background-color: $dark-black;
     }
   }
-  &__logger{
-    width: 100%;
-    border: 1px solid red;
-    padding: 1rem 0;
-    @include body-medium;
-    font-weight: 700;    
-    color: $warm-red;
-    @include tablet{
-      width: 30%;
-      padding: 0;
-  }
-}
+//   &__logger{
+//     width: 100%;
+//     border: 1px solid red;
+//     padding: 1rem 0;
+//     @include body-medium;
+//     font-weight: 700;    
+//     color: $warm-red;
+//     @include tablet{
+//       width: 30%;
+//       padding: 0;
+//   }
+// }
 }
