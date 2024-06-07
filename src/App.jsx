@@ -6,20 +6,20 @@ import FormulaOneApi from './utils/api';
 
 function App() {
 
-  // const formulaOneApi = new FormulaOneApi();
+  const formulaOneApi = new FormulaOneApi();
 
-  // const fetchCircuits = async () => {
-  //   try {
-  //     const response = await formulaOneApi.getAllCircuits();
+  const fetchCircuits = async () => {
+    try {
+      const response = await formulaOneApi.getAllCircuits();
+      console.log(response);
+    } catch {
+      console.error("Error fetching circuit data");
+    }};
 
-  //   } catch {
-  //     console.error("Error fetching circuit data");
-  //   }};
-
-  // useEffect (() => {
-  //   fetchCircuits();
-  //   }
-  // , []);
+  useEffect (() => {
+    fetchCircuits();
+    }
+  , []);
 
   return (
     <BrowserRouter>
