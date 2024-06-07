@@ -1,8 +1,26 @@
 import './App.scss';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
+import FormulaOneApi from './utils/api';
 
 function App() {
+
+  // const formulaOneApi = new FormulaOneApi();
+
+  // const fetchCircuits = async () => {
+  //   try {
+  //     const response = await formulaOneApi.getAllCircuits();
+
+  //   } catch {
+  //     console.error("Error fetching circuit data");
+  //   }};
+
+  // useEffect (() => {
+  //   fetchCircuits();
+  //   }
+  // , []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -15,19 +33,6 @@ function App() {
       <h4>header 4: Formula Zero</h4>
       <h5>header 5: Formula Zero</h5>
       <p>paragraph: Formula Zero</p>
-
-
-      <div className="test__container">
-        <div className="test test__1"></div>
-        <div className="test test__2"></div>
-        <div className="test test__3"></div>
-        <div className="test test__4"></div>
-        <div className="test test__5"></div>
-        <div className="test test__6"></div>
-        <div className="test test__7"></div>
-        <div className="test test__8"></div>
-        <div className="test test__9"></div>
-      </div>
     </BrowserRouter>
   );
 }
