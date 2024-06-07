@@ -73,9 +73,9 @@
 }
 
 @mixin table-header {
-  @include font(0.6875rem, 1rem, 600);
+  @include font(0.6875rem, 1rem, 400);
   @include tablet {
-    @include font(0.75rem, 1.125rem, 600);
+    @include font(0.75rem, 1.125rem, 400);
   }
 }
 

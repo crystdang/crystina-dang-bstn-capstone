@@ -1,0 +1,41 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/mixins" as *;
+
+.player-info {
+
+  &__main {
+    background-color: $med-black;
+    height: 10rem;
+    padding-top: 3rem;
+  }
+
+  &__container {
+    @include flex(space-between, center);
+    @include user-containers($carbon-black);
+  }
+
+  &__user {
+  }
+
+  &__data {
+    @include flex(center, center);
+  }
+
+  &__time {
+    font-weight: 600;
+    background-color: $dark-black;
+    border-radius: 1rem;
+    padding: .25rem 3rem;
+    margin: 0 1rem;
+  }
+
+  &__team {
+    color: $carbon-black;
+    font-weight: 500;
+    background-color: $med-grey;
+    border-radius: 1rem;
+    padding: .25rem 3rem;
+  }
+}

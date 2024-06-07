@@ -9,6 +9,7 @@ function Circuit () {
 
   const trackProgressHandler = (e) => {
     e.preventDefault();
+    
     if (trackProgress > 15) {
       return setTrackProgressImage(RainbowTrack);
     }

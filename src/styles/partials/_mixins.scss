@@ -32,6 +32,22 @@ $matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
   }
 }
 
+@mixin user-containers ($color) {
+  background-color: $color;
+  box-shadow: 0 0 4px $off-white;
+  border-radius: 1rem;
+  width: 90vw;
+  padding: 1rem;
+  margin: auto;
+  @include tablet {
+
+  }
+  @include desktop {
+    max-width: 65rem;
+
+  }
+}
+
 @mixin CTA-button($color, $font-color, $border) {
   background-color: $color;
   color: $font-color;
