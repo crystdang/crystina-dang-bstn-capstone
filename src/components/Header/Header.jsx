@@ -6,7 +6,9 @@ function Header() {
   return (
     <div className="header">
       <div className="header__main" >
-        <img className="header__logo" src={LogoMicro} />
+        <Link to='/'>
+          <img className="header__logo" src={LogoMicro} />
+        </Link>
         <Link to='/future'>
           <h3 className="header__future">
             Future

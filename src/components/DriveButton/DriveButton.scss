@@ -3,13 +3,9 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/mixins" as *;
 
-.main-page {
+.drive-button {
 
-  &__main {
-
+  &__button {
+    @include CTA-button($go-green, $carbon-black, $med-black);
   }
-  &__main-content {
-    display: flex;
-  }
-
 }

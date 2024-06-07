@@ -4,7 +4,7 @@ function TriviaModal({
   question,
   answer,
   // handleModalClose,
-  handleTrivia
+  handler
 }) {
   
   return (
@@ -40,7 +40,7 @@ function TriviaModal({
           </button> */}
           <button 
             className="trivia-modal__cta-btn" 
-            onClick={handleTrivia}
+            onClick={handler}
           >
             Go!
           </button>
