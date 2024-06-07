@@ -11,10 +11,13 @@
   }
 
   &__container {
-    @include flex(space-between, center);
     @include user-containers($carbon-black);
     z-index: 1;
     position: relative;
+
+    @include tablet {
+      @include flex(space-between, center);
+    }
 
     &:hover {
       transform: scale(1.03);
@@ -69,7 +72,10 @@
   }
 
   &__data {
-    @include flex(center, center);
+
+    @include tablet {
+      @include flex(center, center);
+    }
   }
 
   &__time {

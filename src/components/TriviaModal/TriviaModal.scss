@@ -31,11 +31,11 @@
     padding: 1.5rem 1rem;
     @include tablet {
       @include modal;
-      height: 15rem;
+      height: 20rem;
       max-width: 100%;
     }
     @include desktop{
-      height: 15rem;
+      height: 20rem;
       max-width: 50%;
     }
   }
@@ -46,7 +46,8 @@
     cursor: pointer;
   }
 
-  &__header {
+  &__question {
+    color: $carbon-black;
     padding: 1.5rem 0;
     width: 100%;
     @include tablet{
@@ -60,7 +61,6 @@
     @include tablet{
       max-width: 85%;
     }
-  
   }
   
 

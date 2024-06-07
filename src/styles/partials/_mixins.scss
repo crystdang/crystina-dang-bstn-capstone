@@ -65,37 +65,37 @@ $matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
   }
 }
 
-@mixin form-field {
-  height: 2.25rem;
-  width: 100%;
-  border: 1px solid grey;
-  border-radius: 1.25rem;
-  padding: 0 1rem;
-  box-sizing: border-box;
+// @mixin form-field {
+//   height: 2.25rem;
+//   width: 100%;
+//   border: 1px solid grey;
+//   border-radius: 1.25rem;
+//   padding: 0 1rem;
+//   box-sizing: border-box;
   
-  &::placeholder {
-    color: grey;
-  }
+//   &::placeholder {
+//     color: grey;
+//   }
 
-  &:focus {
-    outline: 1px solid black;
-  }
+//   &:focus {
+//     outline: 1px solid black;
+//   }
 
-  @include tablet {
-    height: 2.375rem;
-    width: 12rem;
-    padding: 0 1rem;
-  }
-  @include desktop {
-    width: 17rem;
-  }
-}
+//   @include tablet {
+//     height: 2.375rem;
+//     width: 12rem;
+//     padding: 0 1rem;
+//   }
+//   @include desktop {
+//     width: 17rem;
+//   }
+// }
 
 @mixin modal {
   display: flex;
   @include tablet {
     box-shadow: 0 0 4px $med-grey;
-    border-radius: 0.25rem;
+    border-radius: 1rem;
     padding: 1rem 1.5rem 3rem 4rem;
     margin: 0 2.5rem;
     background-color: $off-white;

@@ -1,9 +1,10 @@
 import "./TriviaModal.scss";
 
 function TriviaModal({
-  // question,
+  question,
+  answer,
   // handleModalClose,
-  // handleTrivia
+  handleTrivia
 }) {
   
   return (
@@ -15,11 +16,20 @@ function TriviaModal({
           alt="Close Icon"
           onClick={handleModalClose}
         /> */}
-        <h1 className="trivia-modal__header">
-          Trivia
+        <h1 className="trivia-modal__question">
+          {!question ? "question" : {question}}
         </h1>
         <p className="trivia-modal__text">
-          question
+          a. {!answer ? "answer 1" : {answer}}
+        </p>
+        <p className="trivia-modal__text">
+          b. {!answer ? "answer 2" : {answer}}
+        </p>
+        <p className="trivia-modal__text">
+          c. {!answer ? "answer 3" : {answer}}
+        </p>
+        <p className="trivia-modal__text">
+          d. {!answer ? "answer 4" : {answer}}
         </p>
         <div className="trivia-modal__buttons">
           {/* <button
@@ -30,9 +40,9 @@ function TriviaModal({
           </button> */}
           <button 
             className="trivia-modal__cta-btn" 
-            // onClick={handleTrivia}
+            onClick={handleTrivia}
           >
-            Trivia
+            Go!
           </button>
         </div>
       </div>
