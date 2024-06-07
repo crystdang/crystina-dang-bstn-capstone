@@ -51,7 +51,7 @@ $matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
 @mixin CTA-button($color, $font-color, $border) {
   background-color: $color;
   color: $font-color;
-  @include labels-links-buttons;
+  // @include labels-links-buttons;
   height: 2.25rem;
   width: 100%;
   border: $border;
@@ -88,5 +88,20 @@ $matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
   }
   @include desktop {
     width: 17rem;
+  }
+}
+
+@mixin modal {
+  display: flex;
+  @include tablet {
+    box-shadow: 0 0 4px $med-grey;
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem 3rem 4rem;
+    margin: 0 2.5rem;
+    background-color: $off-white;
+  }
+  @include desktop {
+    margin: 0 auto;
+    padding: 1rem 1rem 2rem 4.5rem;
   }
 }

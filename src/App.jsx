@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import FormulaOneApi from './utils/api';
+import TriviaModal from './components/TriviaModal/TriviaModal';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>} />
       </Routes>
-
+    {/* <TriviaModal /> */}
       <h1>header 1: FORMULA ZERO</h1>
       <h2>header 2: Formula Zero</h2>
       <h3>header 3: Formula Zero</h3>

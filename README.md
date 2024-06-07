@@ -83,7 +83,7 @@ As a user, I want to be rewarded for learning
 List any external sources of data that will be used in your app.
 
 https://documenter.getpostman.com/view/11586746/SztEa7bL
-https://api-sports.io/documentation/formula-1/v1 (circuit, driver image)
+
 
 ### Sitemap
 
@@ -196,6 +196,7 @@ https://f1experiences.com/blog/ranked-top-10-classic-f1-circuits-to-experience
 https://www.formula1.com/en/f1-live-timing.html
 https://ergast.com/mrd/methods/circuits/
 https://openf1.org/#introduction
+https://api-sports.io/documentation/formula-1/v1 (circuit, driver image) NOT FREE
 
 AI
 https://huggingface.co/google/gemma-7b-it-GGUF
