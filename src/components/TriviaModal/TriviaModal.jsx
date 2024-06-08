@@ -2,11 +2,12 @@ import "./TriviaModal.scss";
 
 function TriviaModal({
   question,
-  answer,
+  answers,
   // handleModalClose,
   handler
 }) {
-  
+
+  console.log("answers: ", answers);
   return (
     <div className="trivia-modal">
       <div className="trivia-modal__popup">
@@ -17,20 +18,15 @@ function TriviaModal({
           onClick={handleModalClose}
         /> */}
         <h1 className="trivia-modal__question">
-          {!question ? "question" : {question}}
+          {question}
         </h1>
-        <p className="trivia-modal__text">
-          a. {!answer ? "answer 1" : {answer}}
-        </p>
-        <p className="trivia-modal__text">
-          b. {!answer ? "answer 2" : {answer}}
-        </p>
-        <p className="trivia-modal__text">
-          c. {!answer ? "answer 3" : {answer}}
-        </p>
-        <p className="trivia-modal__text">
-          d. {!answer ? "answer 4" : {answer}}
-        </p>
+        {answers.map((answer, index) => {
+          return (
+            <p className="trivia-modal__text" key={index}>
+              {answer}
+            </p>
+          )
+        })}
         <div className="trivia-modal__buttons">
           {/* <button
             className="trivia-modal__cancel-btn"

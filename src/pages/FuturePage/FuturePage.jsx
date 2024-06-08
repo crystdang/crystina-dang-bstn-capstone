@@ -2,7 +2,7 @@ import "./FuturePage.scss";
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { useEffect, useState } from 'react';
-import FormulaOneApi from '../../utils/api';
+import FormulaOneApi from '../../utils/f1Api';
 
 function FuturePage() {
 

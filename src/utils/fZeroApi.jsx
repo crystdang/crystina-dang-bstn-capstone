@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default class FormulaZeroeApi {
+export default class FormulaZeroApi {
   constructor() {
     this.baseUrl = import.meta.env.VITE_API_URL;
   }
