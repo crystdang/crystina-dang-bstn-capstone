@@ -5,7 +5,7 @@ export default class FormulaOneApi {
     this.baseUrl = "http://ergast.com/api/f1";
   }
 
-  // GET all warehouses
+  // GET all circuits
   async getAllCircuits() {
 
     try {

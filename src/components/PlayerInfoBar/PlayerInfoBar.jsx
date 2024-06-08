@@ -15,7 +15,7 @@ function PlayerInfoBar() {
         <div className="player-info__container player-info__container--other player-info__container--top">
           <PlayerInfoItem 
             place="3rd"
-            user="Alsono"
+            user="Alonso"
             time="- 1:20"
             team="ALPINE"
           />

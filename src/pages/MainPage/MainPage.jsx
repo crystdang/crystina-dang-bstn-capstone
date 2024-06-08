@@ -17,6 +17,9 @@ function MainPage() {
   const [trackProgress, setTrackProgress] = useState(1);
 
   const modalHandler = () => {
+    if (trackProgress > 16) {
+      return setModal(false);
+    }
     setModal(true);
   }
 
@@ -30,7 +33,7 @@ function MainPage() {
     setTrackProgressImage(`/src/assets/images/SVG/track-${trackProgress}.svg`);
   }
 
-
+console.log(trackProgress);
   return (
     <div className="main-page">
       <Header />
@@ -48,8 +51,7 @@ function MainPage() {
             {modal ? 
               <TriviaModal 
                 handler={handleTrivia}
-              /> 
-              : ""}
+              /> : ""}
           </div>
         </main>
       </div>
