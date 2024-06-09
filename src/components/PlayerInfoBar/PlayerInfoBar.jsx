@@ -14,15 +14,16 @@ function PlayerInfoBar({
   return (
     <div className="player-info">
       <div className="player-info__main">
-        <div className="player-info__container player-info__container--other player-info__container--top">
-          <PlayerInfoItem 
-            place="3rd"
-            user="Alonso"
-            time="- 1:20"
-            team="ALPINE"
-          />
-        </div>
-        <div className="player-info__container">
+        {(place > 1) ? 
+          <div className="player-info__container player-info__container--other player-info__container--top">
+            <PlayerInfoItem 
+              place={placeSuffix(place - 1)}
+              user="Alonso"
+              time="- 1:20"
+              team="ALPINE"
+            />
+          </div> : ""}
+        <div className={`player-info__container ${(place === 20) ? 'player-info__container--last' : ""}`}>
           <PlayerInfoItem 
             place={placeSuffix(place)}
             user={driver}
@@ -30,14 +31,15 @@ function PlayerInfoBar({
             team={team}
           />
         </div>
-        <div className="player-info__container player-info__container--other player-info__container--bottom">
-          <PlayerInfoItem 
-            place="5th"
-            user="Hamilton"
-            time="+ 0:20"
-            team="MERCEDES"
-          />
-        </div>
+        {(place < 20) ? 
+          <div className="player-info__container player-info__container--other player-info__container--bottom">
+              <PlayerInfoItem 
+                place={placeSuffix(place + 1)}
+                user="Hamilton"
+                time="+ 0:20"
+                team="MERCEDES"
+              />
+          </div> : ""}
       </div>
     </div>
   )
