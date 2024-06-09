@@ -4,7 +4,7 @@
 @use "../../styles/partials/mixins" as *;
 
 
-.trivia-modal {
+.landing {
   position: fixed;
     display: flex;
     top: 0;
@@ -22,7 +22,7 @@
   }
 
   &__popup {
-    background-color: $off-white;
+    background-color: $carbon-black;
     @include flex(flex-start, space-between);
     flex-direction: column;
     position: relative;
@@ -30,7 +30,7 @@
     height: 100%;
     padding: 1.5rem 1rem;
     @include tablet {
-      @include modal ($off-white);
+      @include modal ($carbon-black);
       height: 20rem;
       max-width: 100%;
     }
@@ -62,6 +62,9 @@
     }
   }
   
+  &__name {
+    // @include form-field;
+  }
 
   &__buttons {
     position: fixed;
@@ -78,6 +81,16 @@
       padding: 3.5rem 0 0 0;
       width: 95%;
       justify-content: flex-end; 
+    }
+  }
+
+  &__cancel-btn {
+    @include CTA-button($off-white, $carbon-black, none);
+    border: 1px solid $med-grey;
+    width: 50%;
+    &:hover {
+      border-color: $dark-black;
+      color: $dark-black
     }
   }
 

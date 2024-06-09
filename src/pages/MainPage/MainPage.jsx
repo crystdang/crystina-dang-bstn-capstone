@@ -6,10 +6,12 @@ import PointsCounter from '../../components/PointsCounter/PointsCounter';
 import DriveButton from '../../components/DriveButton/DriveButton';
 import TriviaModal from '../../components/TriviaModal/TriviaModal';
 import Loading from '../../components/Loading/Loading';
+import Landing from '../../components/Landing/Landing';
 import { useTrivia } from '../../utils/trivia';
 import { useModalHandler } from '../../utils/modal';
 import { useEffect, useState } from 'react';
 import "./MainPage.scss";
+import { useHandleLanding } from '../../utils/landing-handler';
 
 function MainPage() {
 
@@ -17,21 +19,34 @@ function MainPage() {
 
   const handleSelected = (input) => {
     setSelected(input)
-  }
+  };
 
-  const{ 
+  const {
+    driver,
+    constructors,
+    cleanConstructor,
+    fetchConstructors,
+    handleDriver,
+    handleLandingSubmit,
+    formation,
+    team
+  } = useHandleLanding();
+
+  const { 
     fetchData,
     fetchTrivia,
     correctAnswer,
     loading,
     // error,
     question,
-    allPossibleAnswers,
+    allPossibleAnswers
   } = useTrivia();
 
 
-  const{
+  const {
     modal,
+    place,
+    placeSuffix,
     trackProgress,
     trackProgressImage,
     modalHandler,
@@ -50,30 +65,49 @@ function MainPage() {
   return (
     <div className="main-page">
       <Header />
-      {loading ? <Loading /> :
       <div className="main-page__main" >
-        <PlayerInfoBar />
-        <main className="main-page__main-content" >
-          <Circuit 
-            image={trackProgressImage}
+      {loading ? <Loading /> :
+      <>
+      {!formation ? 
+        <Landing 
+        loading={loading}
+        driver={driver}
+        constructors={constructors}
+        cleanConstructor={cleanConstructor}
+        fetchConstructors={fetchConstructors}
+        handleDriver={handleDriver}
+        handleLandingSubmit={handleLandingSubmit}
+        /> :
+        <>
+          <PlayerInfoBar 
+            driver={driver}
+            team={team}
+            place={place}
+            placeSuffix={placeSuffix}
           />
-          <div className="main-page__data">
-            <PointsCounter />
-            <DriveButton 
-              handler={modalHandler}
+          <main className="main-page__main-content" >
+            <Circuit 
+              image={trackProgressImage}
             />
-            {modal ? 
-              <TriviaModal 
-                handler={handleTrivia}
-                correct={correctAnswer}
-                question={question}
-                answers={allPossibleAnswers}
-                selected={selected}
-                handleSelected={handleSelected}
-              /> : ""}
-          </div>
-        </main>
-      </div>}
+            <div className="main-page__data">
+              <PointsCounter />
+              <DriveButton 
+                handler={modalHandler}
+              />
+              {modal ? 
+                <TriviaModal 
+                  handler={handleTrivia}
+                  correct={correctAnswer}
+                  question={question}
+                  answers={allPossibleAnswers}
+                  selected={selected}
+                  handleSelected={handleSelected}
+                /> : ""}
+            </div>
+          </main>
+        </>}
+      </>}
+      </div>
       <Footer />
     </div>
 )

@@ -2,12 +2,14 @@ import './PlayerInfoBar.scss';
 import { useState } from 'react';
 import PlayerInfoItem from '../PlayerInfoItem/PlayerInfoItem';
 
-function PlayerInfoBar() {
+function PlayerInfoBar({
+  driver,
+  team,
+  place,
+  placeSuffix
+}) {
   const currentTime = Date.now();
-  const [place, setPlace] = useState("4th");
-  const [user, setUser] = useState("Vettel");
   const [time, setTime] = useState(currentTime);
-  const [team, setTeam] = useState("FERRARI");
 
   return (
     <div className="player-info">
@@ -22,8 +24,8 @@ function PlayerInfoBar() {
         </div>
         <div className="player-info__container">
           <PlayerInfoItem 
-            place={place}
-            user={user}
+            place={placeSuffix(place)}
+            user={driver}
             time={time}
             team={team}
           />

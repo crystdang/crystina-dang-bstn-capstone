@@ -6,6 +6,8 @@ function PlayerInfoItem({
   time,
   team
 }) {
+
+  
   return (
     <>
       <div className="player-info__identifier">

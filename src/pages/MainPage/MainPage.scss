@@ -5,8 +5,9 @@
 
 .main-page {
 
-  &__main {
 
+  &__main {
+    min-height: 30rem;
   }
   &__main-content {
     display: flex;
