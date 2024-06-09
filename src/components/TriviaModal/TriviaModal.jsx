@@ -3,40 +3,33 @@ import "./TriviaModal.scss";
 function TriviaModal({
   question,
   answers,
-  // handleModalClose,
+  selected,
+  correct,
+  handleSelected,
   handler
 }) {
 
-  console.log("answers: ", answers);
   return (
     <div className="trivia-modal">
       <div className="trivia-modal__popup">
-        {/* <img
-          className="trivia-modal__close"
-          src={closeIcon}
-          alt="Close Icon"
-          onClick={handleModalClose}
-        /> */}
         <h1 className="trivia-modal__question">
           {question}
         </h1>
         {answers.map((answer, index) => {
           return (
-            <p className="trivia-modal__text" key={index}>
+            <button 
+              className={`trivia-modal__text ${(selected === answer) ? "trivia-modal__text--selected" : ""}`} 
+              key={index}
+              onClick={() => handleSelected(answer)}
+            >
               {answer}
-            </p>
+            </button>
           )
         })}
         <div className="trivia-modal__buttons">
-          {/* <button
-            className="trivia-modal__cancel-btn"
-            // onClick={handleModalClose}
-          >
-            Cancel
-          </button> */}
           <button 
             className="trivia-modal__cta-btn" 
-            onClick={handler}
+            onClick={() => handler(selected, correct)}
           >
             Go!
           </button>

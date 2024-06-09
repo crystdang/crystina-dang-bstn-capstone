@@ -6,7 +6,6 @@ export const useTrivia = () => {
   const [trivia, setTrivia] = useState([]);
   const [question, setQuestion] = useState("");
   const [correctAnswer, setCorrectAnswer] = useState("");
-  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
   const [allPossibleAnswers, setAllPossibleAnswers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -14,9 +13,9 @@ export const useTrivia = () => {
   //combines correct and incorrect answer into single array
   const combineAllAnswers = async (incorrect, correct) => {
     const allAnswers = [];
-    for (let i = 0; i < incorrect.length; i++) {
-      allAnswers.push(incorrect[i]);
-    }
+    incorrect.map((answer) => {
+      allAnswers.push(answer);
+    })
     allAnswers.push(correct);
     //Randomize order of answers in array
     allAnswers.sort(() => Math.random() - 0.5);
@@ -26,14 +25,7 @@ export const useTrivia = () => {
     setLoading(true);
     try {
       const fetchedData = await formulaZeroApi.getAllTrivia();
-      setTrivia(fetchedData[0]);
-      // trivia.map((each) => {
-        setQuestion(fetchedData[0].question);
-        setCorrectAnswer(fetchedData[0].correct_answer);
-        const formattedIncorrectAnswers = fetchedData[0].incorrect_answers.split(', ');
-
-        await combineAllAnswers(formattedIncorrectAnswers, fetchedData[0].correct_answer);
-      // })
+      setTrivia(fetchedData);
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -41,14 +33,26 @@ export const useTrivia = () => {
       console.error("Error fetching data: ", error);
     }
   };
+  
+  const fetchTrivia = async (progress) => {
+    if (!trivia[progress]) {
+      return;
+    }
+    setQuestion(trivia[progress].question);
+    setCorrectAnswer(trivia[progress].correct_answer);
+    const formattedIncorrectAnswers = trivia[progress].incorrect_answers.split(', ');
+
+    await combineAllAnswers(formattedIncorrectAnswers, trivia[progress].correct_answer);
+  }
+
 
   return {
     fetchData,
+    fetchTrivia,
+    correctAnswer,
     loading,
     error,
     question,
     allPossibleAnswers,
-    correctAnswer,
-    incorrectAnswers
   }
 }

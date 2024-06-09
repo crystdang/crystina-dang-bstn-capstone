@@ -1,7 +1,6 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/breakpoints' as *;
-@use '../../styles/partials/fonts' as *;
 
 .loading {
   @include flex(center, baseline);

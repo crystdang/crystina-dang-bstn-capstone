@@ -61,6 +61,11 @@
     @include tablet{
       max-width: 85%;
     }
+
+    &--selected {
+      background-color: $off-white;
+      color: $carbon-black;
+    }
   }
   
 
