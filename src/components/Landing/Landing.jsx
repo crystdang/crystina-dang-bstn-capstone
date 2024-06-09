@@ -5,9 +5,11 @@ import Loading from '../Loading/Loading';
 function Landing ({
   loading,
   driver,
+  team,
   constructors,
   cleanConstructor,
   fetchConstructors,
+  handleConstructor,
   handleDriver,
   handleLandingSubmit
 }) {
@@ -41,7 +43,7 @@ function Landing ({
                 "landing__input--error" 
                 : ""}`}
               name="constructor" 
-              // onChange={handleConstructor}
+              onChange={handleConstructor}
             >
             <option value="">Choose your team</option>
             {constructors.map((constructor) => (

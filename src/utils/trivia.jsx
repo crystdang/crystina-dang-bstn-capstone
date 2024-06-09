@@ -1,4 +1,4 @@
-import FormulaZeroApi from "./fZeroApi";
+import FormulaZeroApi from "./fzero-api";
 import { useState } from "react";
 
 export const useTrivia = () => {

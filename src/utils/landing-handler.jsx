@@ -1,4 +1,4 @@
-import FormulaOneApi from "./f1Api";
+import FormulaOneApi from "./f1-api";
 import { useState } from "react";
 
 export const useHandleLanding = () => {
@@ -26,18 +26,27 @@ export const useHandleLanding = () => {
     const cleaned = input.replace(' F1 Team', '');
     return cleaned;
   }
+
   const handleDriver = (e) => {
     setDriver(e.target.value);
   }
 
+  const handleConstructor = (e) => {
+    setTeam(e.target.value.toUpperCase());
+  }
+
+  const isFormValid = () => {
+    if (!driver || !team) {
+      return false;
+    } return true;
+  }
   const handleLandingSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setDriver(e.target.name.value);
-    setTeam(e.target.constructor.value.toUpperCase());
-    setFormation(true);
+    if (isFormValid()) {
     setLoading(false);
-
+    setFormation(true);
+  }
   }
 
   return {
@@ -48,6 +57,7 @@ export const useHandleLanding = () => {
     formation,
     cleanConstructor,
     fetchConstructors,
+    handleConstructor,
     handleDriver,
     handleLandingSubmit
   }

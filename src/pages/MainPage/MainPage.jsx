@@ -26,6 +26,7 @@ function MainPage() {
     constructors,
     cleanConstructor,
     fetchConstructors,
+    handleConstructor,
     handleDriver,
     handleLandingSubmit,
     formation,
@@ -72,10 +73,12 @@ function MainPage() {
         <Landing 
         loading={loading}
         driver={driver}
+        team={team}
         constructors={constructors}
         cleanConstructor={cleanConstructor}
         fetchConstructors={fetchConstructors}
         handleDriver={handleDriver}
+        handleConstructor={handleConstructor}
         handleLandingSubmit={handleLandingSubmit}
         /> :
         <>
