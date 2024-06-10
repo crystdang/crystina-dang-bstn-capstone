@@ -93,7 +93,7 @@ function MainPage() {
               image={trackProgressImage}
             />
             <div className="main-page__data">
-              <PointsCounter />
+              {/* <PointsCounter /> */}
               <DriveButton 
                 handler={modalHandler}
               />

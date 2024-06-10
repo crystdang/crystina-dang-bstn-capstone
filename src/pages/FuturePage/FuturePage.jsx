@@ -1,46 +1,45 @@
 import "./FuturePage.scss";
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { useEffect, useState } from 'react';
-import FormulaOneApi from '../../utils/f1-api';
+import Loading from '../../components/Loading/Loading';
+import { useEffect } from 'react';
+import { useHandleCircuits } from "../../utils/circuits-handler";
+import Countdown from 'react-countdown';
 
 function FuturePage() {
 
-  const [circuits, setCircuits] = useState([]);
+  const {
+    fetchCircuits,
+    loading,
+    nextRace
+  } = useHandleCircuits();
 
-  const formulaOneApi = new FormulaOneApi();
-
-  const fetchCircuits = async () => {
-    try {
-      const response = await formulaOneApi.getAllCircuits();
-      setCircuits(response);
-
-    } catch {
-      console.error("Error fetching circuit data");
-    }};
 
   useEffect (() => {
     fetchCircuits();
-    }
+  }
   , []);
 
+  console.log(nextRace.date + nextRace.time)
   return (
     <div className="future-page">
       <Header />
-      <div className="future-page__main" >
-        <main className="future-page__main-content" >
-          Next Races
-          {circuits.map(circuit => {
-            return (
-              <div key={circuit.round}>
-                <h1>{circuit.raceName}</h1>
-                <h2>{circuit.date}</h2>
-                <h2>{circuit.time}</h2>
+      {loading ? 
+        <Loading /> :
+        <div className="future-page__main" >
+          <h1 className="future-page__countdown">
+            <Countdown 
+              date={nextRace.date + "T" + nextRace.time}
+            />
+          </h1>
+          <main className="future-page__main-content" >
+            Next Races
+              <div>
+                <h1>{nextRace.raceName}</h1>
+                <h2>{nextRace.date}</h2>
               </div>
-            )
-          })}
-        </main>
-      </div>
+          </main>
+        </div>}
       <Footer />
     </div>
   )

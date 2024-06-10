@@ -1,48 +1,25 @@
-export const timestampConverter = (timestamp) => {
+import { useState } from "react";
 
-  const msPerMinute = 60 * 1000;
-  const msPerHour = msPerMinute * 60;
-  const msPerDay = msPerHour * 24;
-  const msPerMonth = msPerDay * 30;
-  const msPerYear = msPerDay * 365;
+export const useDateConverter = () => {
+    const [nextRace, setNextRace] = useState("");
+    // Function to parse date string to Date object
+    const parseDate = dateString => {
+        const [year, month, day] = dateString.split("-");
+        return new Date(year, month - 1, day);
+    };
 
-  const elapsed = Date.now() - timestamp;
+    // Function to find the next upcoming date
+    const findNextDate = array => {
+        const currentDate = new Date();
+        const nextDateArray = array.find(item => {
+            const date = parseDate(item.date);
+            return date > currentDate;
+        });
+        setNextRace(nextDateArray);
+    };
 
-  if (elapsed < msPerMinute) {
-      return Math.round(elapsed/1000) + ' seconds ago';   
-  }
-
-  else if (elapsed < msPerHour) {
-      return Math.round(elapsed/msPerMinute) + ' minutes ago';   
-  }
-
-  else if (elapsed < msPerDay ) {
-      return Math.round(elapsed/msPerHour ) + ' hours ago';   
-  }
-
-  else if (elapsed < msPerMonth) {
-      return Math.round(elapsed/msPerDay) + ' days ago';   
-  }
-
-  else if (elapsed < msPerYear) {
-      return Math.round(elapsed/msPerMonth) + ' months ago';   
-  }
-
-  else {
-      return Math.round(elapsed/msPerYear ) + ' years ago';   
-  }
+    return {
+        findNextDate,
+        nextRace
+    }
 }
-
-
-export const convertDate = (timestamp) => {
-  const date = new Date(timestamp);
-  const format = {
-      weekday: "short",
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-  };
-  let convertedDate = date.toLocaleDateString("en-US", format).split(",").join("");
-
-  return convertedDate;
-};

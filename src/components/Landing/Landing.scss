@@ -40,8 +40,23 @@
     }
   }
 
-  &__question {
-    color: $carbon-black;
+  &__header {
+    @include flex(center, center);
+    flex-direction: column;
+  }
+
+  &__logo {
+    width: 50vw;
+    @include tablet {
+      padding-top: 3rem;
+      height: 7rem;
+    }
+  };
+
+  &__logo-text {
+    color: $hi-white;
+    font-weight: 300;
+    text-align: center;
     padding: 1.5rem 0;
     width: 100%;
     @include tablet{
@@ -62,8 +77,17 @@
     }
   }
   
+  &__info {
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+  }
   &__name {
-    // @include form-field;
+    padding: 1rem;
+  }
+
+  &__input {
+    font-family: "F1";
+    padding: 1rem;
   }
 
   &__buttons {

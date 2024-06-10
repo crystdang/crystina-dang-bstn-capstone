@@ -13,6 +13,10 @@
     // background-image: url(../../assets/graphics/cross-grid-white-bg.svg);
     // background-size: 300%;
     // background-repeat: no-repeat;
-    width: 60rem;
+    min-width: 20rem;
+
+    @include tablet {
+      width: 60rem;
+    }
   }
 }
