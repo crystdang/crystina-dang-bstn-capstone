@@ -69,7 +69,7 @@ function Landing ({
                 )}
               </select>
             </div>
-            <button>
+            <button className="landing__cta-btn">
               START THE FORMATION LAP
             </button>
         </form>

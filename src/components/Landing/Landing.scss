@@ -31,11 +31,10 @@
     padding: 1.5rem 1rem;
     @include tablet {
       @include modal ($carbon-black);
-      height: 20rem;
+      height: 25rem;
       max-width: 100%;
     }
     @include desktop{
-      height: 20rem;
       max-width: 50%;
     }
   }
@@ -81,46 +80,26 @@
     @include flex(flex-start, flex-start);
     flex-direction: column;
   }
+
   &__name {
     padding: 1rem;
+    margin-bottom: 1rem;
   }
 
   &__input {
     font-family: "F1";
     padding: 1rem;
-  }
-
-  &__buttons {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    box-sizing: border-box;
-    padding: 1.5rem 1rem;
-    width: 100%;
-    @include flex(center, flex-end);
-    gap: 1.5rem;
-    @include tablet {
-      position: relative;
-      padding: 3.5rem 0 0 0;
-      width: 95%;
-      justify-content: flex-end; 
-    }
-  }
-
-  &__cancel-btn {
-    @include CTA-button($off-white, $carbon-black, none);
-    border: 1px solid $med-grey;
-    width: 50%;
-    &:hover {
-      border-color: $dark-black;
-      color: $dark-black
-    }
+    margin-bottom: 1rem;
+    background-color: $carbon-black;
+    color: $hi-white;
   }
 
   &__cta-btn {
     @include CTA-button($warm-red, $hi-white, none);
     width: 50%;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+
     &:hover {
       background-color: $dark-black;
     }
