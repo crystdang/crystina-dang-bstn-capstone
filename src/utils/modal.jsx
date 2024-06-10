@@ -1,9 +1,9 @@
 import { useState } from "react";
 import MtlTrack from '../assets/images/SVG/track-grey.svg';
 import RainbowTrack from '../assets/images/SVG/track-rainbow-all.svg';
-import { mtlData } from "./mtl-data";
+// import { mtlData } from "./mtl-data";
 
-export const useModalHandler = () => {
+export const useHandleModal = () => {
 
   const drsZones = [7, 12, 14];
 
@@ -24,7 +24,7 @@ export const useModalHandler = () => {
     }
   }
 
-  const modalHandler = () => {
+  const handleModal = () => {
     if (trackProgress > 13) {
       setTrackProgressImage(RainbowTrack);
       return setModal(false);
@@ -58,7 +58,7 @@ export const useModalHandler = () => {
     placeSuffix,
     trackProgress,
     trackProgressImage,
-    modalHandler,
+    handleModal,
     handleTrivia
   }
 }

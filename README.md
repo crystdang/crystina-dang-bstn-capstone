@@ -141,3 +141,12 @@ Start the client
 - Emulating a brand is far more complicated then creating your own brand, allocating more time to scrap through the 200 page document is necessary
 - Games are very layered and takes a lot of planning before execution
 - Data from an API may not be in the format needed and scrapping through the data ahead of time would better support styling
+
+
+## Next Steps
+
+- Circuit imagery
+- Quiz imagery
+- Leaderboard animation
+- Achievement indicator
+- Final circuit info

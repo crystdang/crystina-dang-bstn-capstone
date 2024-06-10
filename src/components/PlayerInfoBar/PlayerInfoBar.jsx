@@ -1,5 +1,4 @@
 import './PlayerInfoBar.scss';
-import { useState } from 'react';
 import PlayerInfoItem from '../PlayerInfoItem/PlayerInfoItem';
 
 function PlayerInfoBar({

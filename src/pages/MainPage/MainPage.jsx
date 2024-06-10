@@ -8,7 +8,7 @@ import TriviaModal from '../../components/TriviaModal/TriviaModal';
 import Loading from '../../components/Loading/Loading';
 import Landing from '../../components/Landing/Landing';
 import { useTrivia } from '../../utils/trivia';
-import { useModalHandler } from '../../utils/modal';
+import { useHandleModal } from '../../utils/modal';
 import { useEffect, useState } from 'react';
 import "./MainPage.scss";
 import { useHandleLanding } from '../../utils/landing-handler';
@@ -50,9 +50,9 @@ function MainPage() {
     placeSuffix,
     trackProgress,
     trackProgressImage,
-    modalHandler,
+    handleModal,
     handleTrivia
-  } = useModalHandler();
+  } = useHandleModal();
 
   useEffect(() => {
     fetchData();
@@ -95,7 +95,7 @@ function MainPage() {
             <div className="main-page__data">
               {/* <PointsCounter /> */}
               <DriveButton 
-                handler={modalHandler}
+                handler={handleModal}
               />
               {modal ? 
                 <TriviaModal 
