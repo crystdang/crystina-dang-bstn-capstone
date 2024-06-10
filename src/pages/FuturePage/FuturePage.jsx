@@ -27,13 +27,15 @@ function FuturePage() {
       {loading ? 
         <Loading /> :
         <div className="future-page__main" >
+          <h1 className="future-page__title">
+            Next Race
+          </h1>
           <h1 className="future-page__countdown">
             <Countdown 
               date={nextRace.date + "T" + nextRace.time}
             />
           </h1>
           <main className="future-page__main-content" >
-            Next Races
               <div>
                 <h1>{nextRace.raceName}</h1>
                 <h2>{nextRace.date}</h2>

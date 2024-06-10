@@ -8,8 +8,8 @@ function PlayerInfoBar({
   place,
   placeSuffix
 }) {
-  const currentTime = Date.now();
-  const [time, setTime] = useState(currentTime);
+  
+  // const [time, setTime] = useState(currentTime);
 
   return (
     <div className="player-info">
@@ -19,7 +19,7 @@ function PlayerInfoBar({
             <PlayerInfoItem 
               place={placeSuffix(place - 1)}
               user="Alonso"
-              time="- 1:20"
+              // time="- 1:20"
               team="ALPINE"
             />
           </div> : ""}
@@ -27,7 +27,7 @@ function PlayerInfoBar({
           <PlayerInfoItem 
             place={placeSuffix(place)}
             user={driver}
-            time={time}
+            // time={time}
             team={team}
           />
         </div>
@@ -36,7 +36,7 @@ function PlayerInfoBar({
               <PlayerInfoItem 
                 place={placeSuffix(place + 1)}
                 user="Hamilton"
-                time="+ 0:20"
+                // time="+ 0:20"
                 team="MERCEDES"
               />
           </div> : ""}

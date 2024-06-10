@@ -3,7 +3,7 @@ import './PlayerInfoItem.scss';
 function PlayerInfoItem({
   place,
   user,
-  time,
+  // time,
   team
 }) {
 
@@ -20,7 +20,7 @@ function PlayerInfoItem({
       </div>
       <div className="player-info__data">
       <h2 className="player-info__time">
-        {time}
+        {/* {time} */}
       </h2>
       <h2 className="player-info__team">
         {team}
