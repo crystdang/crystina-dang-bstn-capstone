@@ -27,6 +27,7 @@ export const useHandleModal = () => {
   const handleModal = () => {
     if (trackProgress > 13) {
       setTrackProgressImage(RainbowTrack);
+      console.log(trackProgress);
       return setModal(false);
     }
     setTrackProgress(trackProgress + 1);

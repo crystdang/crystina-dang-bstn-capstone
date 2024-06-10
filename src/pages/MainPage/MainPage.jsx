@@ -96,6 +96,7 @@ function MainPage() {
               {/* <PointsCounter /> */}
               <DriveButton 
                 handler={handleModal}
+                trackProgress={trackProgress}
               />
               {modal ? 
                 <TriviaModal 
