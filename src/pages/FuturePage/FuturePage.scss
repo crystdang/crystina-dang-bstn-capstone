@@ -1,0 +1,36 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/mixins" as *;
+
+span {
+  color: $warm-red;
+  font-family: "F1";
+  font-size: 2rem;
+
+  @include tablet {
+    font-size: 4rem;
+  }
+}
+
+.future-page {
+
+
+  &__main {
+    min-height: 30rem;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+  &__main-content {
+  }
+
+  &__countdown {
+  }
+
+}

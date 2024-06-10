@@ -1,0 +1,27 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/breakpoints' as *;
+
+.loading {
+  @include flex(center, baseline);
+  gap: 0.2rem;
+  padding: 3rem;
+  &__content {
+    color: $med-grey;
+    font-size: 0.75rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__loader {
+    width: 0.75rem;
+    aspect-ratio: 4;
+    background: radial-gradient(circle closest-side, $med-grey 90%,#0000) 0/calc(100%/3) 100% space;
+    clip-path: inset(0 100% 0 0);
+    animation: l1 1s steps(4) infinite;
+    @include tablet {
+      width: 1rem;
+    }
+  }
+  @keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}
+}

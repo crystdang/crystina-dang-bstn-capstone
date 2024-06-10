@@ -1,0 +1,16 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/mixins" as *;
+
+.main-page {
+
+
+  &__main {
+    min-height: 30rem;
+  }
+  &__main-content {
+    display: flex;
+  }
+
+}
