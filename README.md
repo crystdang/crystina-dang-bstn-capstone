@@ -2,6 +2,13 @@
 # Formula Zero
 
 A gamified motorsport educational app, specifically for Formula 1. An event-released trivia to educate, encourage and support fans. The design will be framed around the upcoming circuit after the last event and leading up to the next, where general trivia is given to unlock information specific to the upcoming event.
+
+
+## Deployed Site
+
+https://formulazero.netlify.app/
+
+
 ## Author
 
 - [@crystdang](https://www.github.com/crystdang)
@@ -11,12 +18,12 @@ A gamified motorsport educational app, specifically for Formula 1. An event-rele
 
  - [Formula 1](https://www.formula1.com/en.html)
 
+
 ## Tech Stack
 
 **Client:** React (libraries: react, react-router-dom, react-countdown, axios)
 
 **Server:** MySQL, Knex, Node, Express
-
 
 ## Features
 
