@@ -50,7 +50,7 @@ export const useHandleModal = () => {
     }
     setModal(false);
     verifyAnswer(selected);
-    setTrackProgressImage(`/src/assets/images/SVG/track-${trackProgress}.svg`);
+    setTrackProgressImage(`/public/track-${trackProgress}.svg`);
   }
 
   return {
