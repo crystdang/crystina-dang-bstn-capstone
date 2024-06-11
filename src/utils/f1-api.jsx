@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default class FormulaOneApi {
   constructor() {
-    this.baseUrl = "http://ergast.com/api/f1";
+    this.baseUrl = "https://ergast.com/api/f1";
     this.year = new Date().getFullYear();
   }
 

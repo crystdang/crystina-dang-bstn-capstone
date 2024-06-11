@@ -19,7 +19,7 @@ function PlayerInfoBar({
               place={placeSuffix(place - 1)}
               user="Alonso"
               // time="- 1:20"
-              team="ALPINE"
+              team="ASTON MARTIN"
             />
           </div> : ""}
         <div className={`player-info__container ${(place === 20) ? 'player-info__container--last' : ""}`}>
