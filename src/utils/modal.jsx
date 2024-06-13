@@ -1,11 +1,9 @@
 import { useState } from "react";
 import MtlTrack from '../assets/images/SVG/track-grey.svg';
 import RainbowTrack from '../assets/images/SVG/track-rainbow-all.svg';
-// import { mtlData } from "./mtl-data";
+import { drsZones } from "./mtl-data";
 
 export const useHandleModal = () => {
-
-  const drsZones = [7, 12, 14];
 
   const [modal, setModal] = useState(false);
   const [place, setPlace] = useState(20);

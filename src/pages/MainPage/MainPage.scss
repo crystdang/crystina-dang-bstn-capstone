@@ -11,6 +11,11 @@
   }
   &__main-content {
     display: flex;
+    margin: 0 1rem;
+
+    @include tablet {
+      margin: 0 auto;
+    }
   }
 
 }

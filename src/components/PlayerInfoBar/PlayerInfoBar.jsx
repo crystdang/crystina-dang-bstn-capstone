@@ -6,7 +6,8 @@ function PlayerInfoBar({
   team,
   place,
   placeSuffix,
-  time
+  time,
+  trackProgress
 }) {
 
   return (
@@ -25,7 +26,7 @@ function PlayerInfoBar({
           <PlayerInfoItem 
             place={placeSuffix(place)}
             user={driver}
-            time={`POSITION: ${time}`}
+            time={trackProgress > 13 ? `POSITION(S) GAINED: ${20 - place}` :`POSITION: ${time}`}
             team={team}
           />
         </div>

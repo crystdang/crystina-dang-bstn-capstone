@@ -2,6 +2,7 @@ $matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
 
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/fonts" as *;
 
 @mixin flex($justify, $align) {
   display: flex;
@@ -51,7 +52,7 @@ $matrix: url(../../assets/graphics/cross-grid-white-bg.svg);
 @mixin CTA-button($color, $font-color, $border) {
   background-color: $color;
   color: $font-color;
-  // @include labels-links-buttons;
+  @include labels-links-buttons;
   height: 2.25rem;
   width: 100%;
   border: $border;

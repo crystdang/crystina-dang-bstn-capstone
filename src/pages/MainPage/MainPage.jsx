@@ -109,6 +109,7 @@ function MainPage() {
             place={place}
             placeSuffix={placeSuffix}
             time={time}
+            trackProgress={trackProgress}
           />
           <main className="main-page__main-content" >
             <Circuit 
@@ -121,7 +122,9 @@ function MainPage() {
                 trackProgress={trackProgress}
               />
               <ProgressBar 
-              answered={answered}/>
+                answered={answered}
+                trackProgress={trackProgress}
+              />
               {modal ? 
                 <TriviaModal 
                   handler={handleTrivia}
