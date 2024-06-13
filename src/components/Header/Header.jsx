@@ -16,11 +16,12 @@ function Header({
             Future
           </h3>
         </Link>
+        {!handleCheat ? "" :
           <h3 
             className="header__cheat"
             onClick={handleCheat}>
             Cheat Sheet
-          </h3>
+          </h3>}
       </div>
     </div>
   )

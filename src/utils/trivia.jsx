@@ -41,7 +41,6 @@ export const useTrivia = () => {
     }
     if (!usedTrivia.includes(trivia[progress].id)) {
       setUsedTrivia([...usedTrivia, trivia[progress].id]);
-      console.log("Questions already answered: ", usedTrivia);
     }
     setQuestion(trivia[progress].question);
     setCorrectAnswer(trivia[progress].correct_answer);
