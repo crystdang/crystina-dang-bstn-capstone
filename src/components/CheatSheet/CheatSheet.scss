@@ -1,0 +1,59 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.cheat-sheet {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 10; 
+  overflow-y: scroll;
+  @include tablet {
+    padding-top: 12.5rem;
+    background-color: rgba(0, 0, 0, 0.5); 
+
+  }
+
+  &__close {
+    margin-left: auto;
+    display: block;
+    cursor: pointer;
+  }
+
+  &__none {
+    color: $carbon-black;
+  }
+
+  &__question {
+    color: $dark-grey;
+  }
+  &__answer {
+    color: $carbon-black;
+    margin-bottom: 2rem;
+  }
+  
+  &__popup {
+    background-color: $off-white;
+    @include flex(flex-start, space-between);
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 1rem;
+    @include tablet {
+      @include modal ($off-white);
+      height: fit-content;
+      max-width: 100%;
+    }
+    @include desktop{
+      max-width: 50%;
+    }
+  }
+}

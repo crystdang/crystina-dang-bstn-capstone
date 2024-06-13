@@ -8,6 +8,7 @@ export const useHandleLanding = () => {
   const [constructors, setConstructors] = useState([]);
   const [team, setTeam] = useState("");
   const [driver, setDriver] = useState("");
+  const [lights, setLights] = useState(false);
   const formulaOneApi = new FormulaOneApi();
 
   const fetchConstructors = async () => {
@@ -47,6 +48,7 @@ export const useHandleLanding = () => {
     if (isFormValid()) {
     setLoading(false);
     setFormation(true);
+    setLights(true);
   }
   }
 
@@ -56,6 +58,7 @@ export const useHandleLanding = () => {
     team,
     constructors,
     formation,
+    lights,
     cleanConstructor,
     fetchConstructors,
     handleConstructor,

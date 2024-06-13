@@ -35,44 +35,46 @@ function Landing ({
               Formula Zero
             </h1>
           </div>
-          <form 
-            id="player" 
-            className="landing__player"
-            onSubmit={handleLandingSubmit}
-          >
-            <div className="landing__info">
-              <input 
-                  className="landing__name"
-                  type="text" 
-                  name="name" 
-                  placeholder="driver name"
-                  onChange={handleDriver}
-                  value={driver}
-              />
-              <select 
-                className={`landing__input ${
-                  !team ? 
-                  "landing__input--error" 
-                  : ""}`}
-                name="constructor" 
-                onChange={handleConstructor}
-              >
-              <option value="">Choose your team</option>
-              {constructors.map((constructor) => (
-                    <option 
-                      key={constructor.constructorId} 
-                      value={cleanConstructor(constructor.name)}
-                    >
-                      {cleanConstructor(constructor.name)}
-                    </option>
-                  )
-                )}
-              </select>
-            </div>
-            <button className="landing__cta-btn">
-              START
-            </button>
-        </form>
+          <div className="landing__body">
+            <form 
+              id="player" 
+              className="landing__player"
+              onSubmit={handleLandingSubmit}
+            >
+              <div className="landing__info">
+                <input 
+                    className="landing__name"
+                    type="text" 
+                    name="name" 
+                    placeholder="driver name"
+                    onChange={handleDriver}
+                    value={driver}
+                />
+                <select 
+                  className={`landing__input ${
+                    !team ? 
+                    "landing__input--error" 
+                    : ""}`}
+                  name="constructor" 
+                  onChange={handleConstructor}
+                >
+                <option value="">Choose your team</option>
+                {constructors.map((constructor) => (
+                      <option 
+                        key={constructor.constructorId} 
+                        value={cleanConstructor(constructor.name)}
+                      >
+                        {cleanConstructor(constructor.name)}
+                      </option>
+                    )
+                  )}
+                </select>
+              </div>
+              <button className="landing__cta-btn">
+                START
+              </button>
+            </form>
+          </div>
         </div>}
     </main>
   )

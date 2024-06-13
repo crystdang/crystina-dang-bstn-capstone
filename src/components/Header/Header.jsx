@@ -2,7 +2,9 @@ import './Header.scss';
 import LogoMicro from '../../assets/logos/logo-zero-micro.svg';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({
+  handleCheat
+}) {
   return (
     <div className="header">
       <div className="header__main" >
@@ -14,6 +16,11 @@ function Header() {
             Future
           </h3>
         </Link>
+          <h3 
+            className="header__cheat"
+            onClick={handleCheat}>
+            Cheat Sheet
+          </h3>
       </div>
     </div>
   )

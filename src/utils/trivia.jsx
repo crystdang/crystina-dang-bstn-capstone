@@ -54,6 +54,7 @@ export const useTrivia = () => {
   return {
     fetchData,
     fetchTrivia,
+    trivia,
     correctAnswer,
     loading,
     error,

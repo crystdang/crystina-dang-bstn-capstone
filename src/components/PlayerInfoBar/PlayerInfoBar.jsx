@@ -5,10 +5,9 @@ function PlayerInfoBar({
   driver,
   team,
   place,
-  placeSuffix
+  placeSuffix,
+  time
 }) {
-  
-  // const [time, setTime] = useState(currentTime);
 
   return (
     <div className="player-info">
@@ -18,15 +17,15 @@ function PlayerInfoBar({
             <PlayerInfoItem 
               place={placeSuffix(place - 1)}
               user="Alonso"
-              // time="- 1:20"
+              time=""
               team="ASTON MARTIN"
             />
           </div> : ""}
-        <div className={`player-info__container ${(place === 20) ? 'player-info__container--last' : ""}`}>
+        <div className={`player-info__container ${(place === 20) ? 'player-info__container--last' : ""}${(place === 1) ? 'player-info__container--first' : ""}`}>
           <PlayerInfoItem 
             place={placeSuffix(place)}
             user={driver}
-            // time={time}
+            time={`POSITION: ${time}`}
             team={team}
           />
         </div>
@@ -35,7 +34,7 @@ function PlayerInfoBar({
               <PlayerInfoItem 
                 place={placeSuffix(place + 1)}
                 user="Hamilton"
-                // time="+ 0:20"
+                time=""
                 team="MERCEDES"
               />
           </div> : ""}

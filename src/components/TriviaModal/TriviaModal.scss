@@ -31,7 +31,7 @@
     padding: 1.5rem 1rem;
     @include tablet {
       @include modal ($off-white);
-      height: 25rem;
+      height: fit-content;
       max-width: 100%;
     }
     @include desktop{

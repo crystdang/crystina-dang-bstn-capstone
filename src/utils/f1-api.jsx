@@ -18,7 +18,8 @@ export default class FormulaOneApi {
       console.error(`Unable to get circuit data: ${error}`);
     }
   }
-
+  
+  // GET all constructors
   async getAllConstructors() {
 
     try {
@@ -31,6 +32,7 @@ export default class FormulaOneApi {
     }
   }
 
+  // GET all drivers
   async getAllDrivers() {
 
     try {

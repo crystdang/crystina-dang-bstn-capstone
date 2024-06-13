@@ -27,4 +27,8 @@
       transform: scale(1.03);
     }
   }
+
+  &__cheat {
+    @extend .header__future;
+  }
 }

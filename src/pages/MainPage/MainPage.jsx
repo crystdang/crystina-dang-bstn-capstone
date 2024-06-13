@@ -12,14 +12,27 @@ import { useHandleModal } from '../../utils/modal';
 import { useEffect, useState } from 'react';
 import "./MainPage.scss";
 import { useHandleLanding } from '../../utils/landing-handler';
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import CheatSheet from '../../components/CheatSheet/CheatSheet';
 
 function MainPage() {
 
   const [selected, setSelected] = useState("");
+  const [cheat, setCheat] = useState(false);
 
   const handleSelected = (input) => {
     setSelected(input)
   };
+
+  const handleCheat = (e) => {
+    e.preventDefault();
+    setCheat(true);
+  }
+
+  const handleCheatClose = (e) => {
+    e.preventDefault();
+    setCheat(false);
+  }
 
   const {
     driver,
@@ -30,17 +43,20 @@ function MainPage() {
     handleDriver,
     handleLandingSubmit,
     formation,
+    lights,
     team
   } = useHandleLanding();
 
   const { 
     fetchData,
     fetchTrivia,
+    trivia,
     correctAnswer,
     loading,
     // error,
     question,
-    allPossibleAnswers
+    allPossibleAnswers,
+    usedTrivia
   } = useTrivia();
 
 
@@ -50,6 +66,8 @@ function MainPage() {
     placeSuffix,
     trackProgress,
     trackProgressImage,
+    answered,
+    time,
     handleModal,
     handleTrivia
   } = useHandleModal();
@@ -65,7 +83,9 @@ function MainPage() {
 
   return (
     <div className="main-page">
-      <Header />
+      <Header 
+        handleCheat={handleCheat}
+      />
       <div className="main-page__main" >
       {loading ? <Loading /> :
       <>
@@ -80,6 +100,7 @@ function MainPage() {
         handleDriver={handleDriver}
         handleConstructor={handleConstructor}
         handleLandingSubmit={handleLandingSubmit}
+        lights={lights}
         /> :
         <>
           <PlayerInfoBar 
@@ -87,6 +108,7 @@ function MainPage() {
             team={team}
             place={place}
             placeSuffix={placeSuffix}
+            time={time}
           />
           <main className="main-page__main-content" >
             <Circuit 
@@ -98,6 +120,8 @@ function MainPage() {
                 handler={handleModal}
                 trackProgress={trackProgress}
               />
+              <ProgressBar 
+              answered={answered}/>
               {modal ? 
                 <TriviaModal 
                   handler={handleTrivia}
@@ -106,6 +130,12 @@ function MainPage() {
                   answers={allPossibleAnswers}
                   selected={selected}
                   handleSelected={handleSelected}
+                /> : ""}
+              {cheat ?
+                <CheatSheet 
+                  usedTrivia={usedTrivia}
+                  trivia={trivia}
+                  handleClose={handleCheatClose}
                 /> : ""}
             </div>
           </main>

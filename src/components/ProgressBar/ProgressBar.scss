@@ -4,4 +4,19 @@
 @use "../../styles/partials/mixins" as *;
 
 .progress-bar {
+
+  &__answered {
+    height: 2rem;
+    width: 6rem;
+    border: 0.025rem solid $med-grey;
+    text-align: center;
+    
+    &--correct {
+      background-color: $go-green;
+    }
+
+    &--incorrect {
+      background-color: $warm-red;
+    }
+  }
 };

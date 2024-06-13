@@ -12,6 +12,7 @@ export const useHandleModal = () => {
   const [trackProgressImage, setTrackProgressImage] = useState(MtlTrack);
   const [trackProgress, setTrackProgress] = useState(0);
   const [answered, setAnswered] = useState([]);
+  const [time, setTime] = useState("0");
 
   const placeSuffix = (input) => {
     if (input === 1) {
@@ -43,17 +44,24 @@ export const useHandleModal = () => {
 
     const verifyAnswer = (input) => {
       if (input === correct && place > 1) {
-          if (drsZones.includes(trackProgress) || trackProgress === 1) {
+          if (trackProgress === 1) {
+            setPlace(place - 3);
+            setAnswered([...answered, "correct, +3"]);
+            setTime("+ 3")
+            return console.log("Starting");
+          }
+          if (drsZones.includes(trackProgress)) {
             setPlace(place - 2);
-            setAnswered([...answered, "correct"]);
+            setAnswered([...answered, "correct, +2"]);
+            setTime("+ 2")
             return console.log("DRS Zone");
           }
         setPlace(place - 1);
-        setAnswered([...answered, "correct"]);
-        console.log(answered);
+        setAnswered([...answered, "correct, +1"]);
+        setTime("+ 1");
       } else {
-        setAnswered([...answered, "incorrect"]);
-        console.log(answered);
+        setAnswered([...answered, "incorrect, 0"]);
+        setTime("0");
       }
     }
 
@@ -71,6 +79,8 @@ export const useHandleModal = () => {
     modal,
     place,
     placeSuffix,
+    answered,
+    time,
     trackProgress,
     trackProgressImage,
     handleModal,

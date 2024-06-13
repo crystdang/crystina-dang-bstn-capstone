@@ -11,10 +11,11 @@ function DriveButton({
   return (
     <div className="drive-button">
       <button 
-        className="drive-button__button"
+        className={`drive-button__button ${trackProgress < 13 ? "" : "drive-button__button--finished"}`}
         onClick={(trackProgress > 13) ? reward : handler}
         >
-          <span id="rewardId" /> Drive
+          <span id="rewardId" /> 
+          {trackProgress < 14 ? "Drive" : "Checkered Flag"}
       </button>
     </div>
   )
