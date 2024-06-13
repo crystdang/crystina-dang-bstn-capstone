@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header';
 import PlayerInfoBar from '../../components/PlayerInfoBar/PlayerInfoBar';
 import Footer from '../../components/Footer/Footer';
 import Circuit from '../../components/Circuit/Circuit';
-import PointsCounter from '../../components/PointsCounter/PointsCounter';
+// import PointsCounter from '../../components/PointsCounter/PointsCounter';
 import DriveButton from '../../components/DriveButton/DriveButton';
 import TriviaModal from '../../components/TriviaModal/TriviaModal';
 import Loading from '../../components/Loading/Loading';

@@ -2,13 +2,13 @@ import { useState } from "react";
 
 export const useDateConverter = () => {
     const [nextRace, setNextRace] = useState("");
-    // Function to parse date string to Date object
+    // parse date string to Date object
     const parseDate = dateString => {
         const [year, month, day] = dateString.split("-");
         return new Date(year, month - 1, day);
     };
 
-    // Function to find the next upcoming date
+    // find the next upcoming date
     const findNextDate = array => {
         const currentDate = new Date();
         const nextDateArray = array.find(item => {

@@ -40,6 +40,7 @@ export const useHandleLanding = () => {
       return false;
     } return true;
   }
+  
   const handleLandingSubmit = (e) => {
     e.preventDefault();
     setLoading(true);

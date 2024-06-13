@@ -12,7 +12,7 @@ function DriveButton({
     <div className="drive-button">
       <button 
         className="drive-button__button"
-        onClick={(trackProgress === 14) ? reward : handler}
+        onClick={(trackProgress > 13) ? reward : handler}
         >
           <span id="rewardId" /> Drive
       </button>

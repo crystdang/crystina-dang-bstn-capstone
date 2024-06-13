@@ -51,7 +51,7 @@ function Landing ({
               />
               <select 
                 className={`landing__input ${
-                  !constructors ? 
+                  !team ? 
                   "landing__input--error" 
                   : ""}`}
                 name="constructor" 
@@ -70,7 +70,7 @@ function Landing ({
               </select>
             </div>
             <button className="landing__cta-btn">
-              START THE FORMATION LAP
+              START
             </button>
         </form>
         </div>}

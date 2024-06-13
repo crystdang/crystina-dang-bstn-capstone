@@ -11,6 +11,7 @@ export const useHandleModal = () => {
   const [place, setPlace] = useState(20);
   const [trackProgressImage, setTrackProgressImage] = useState(MtlTrack);
   const [trackProgress, setTrackProgress] = useState(0);
+  const [answered, setAnswered] = useState([]);
 
   const placeSuffix = (input) => {
     if (input === 1) {
@@ -34,19 +35,32 @@ export const useHandleModal = () => {
     setModal(true);
   }
   
+  // const storeAnswered = (input) => {
+    
+  // }
+
   const handleTrivia = (selected, correct) => {
 
     const verifyAnswer = (input) => {
       if (input === correct && place > 1) {
           if (drsZones.includes(trackProgress) || trackProgress === 1) {
             setPlace(place - 2);
+            setAnswered([...answered, "correct"]);
             return console.log("DRS Zone");
           }
         setPlace(place - 1);
-        console.log("correct")
+        setAnswered([...answered, "correct"]);
+        console.log(answered);
       } else {
-        console.log("incorrect")
+        setAnswered([...answered, "incorrect"]);
+        console.log(answered);
       }
+    }
+
+    if (trackProgress > 13) {
+      verifyAnswer(selected);
+      setTrackProgressImage(RainbowTrack);
+      return setModal(false);
     }
     setModal(false);
     verifyAnswer(selected);

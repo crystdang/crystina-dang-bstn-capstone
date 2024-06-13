@@ -9,15 +9,16 @@ export const useTrivia = () => {
   const [allPossibleAnswers, setAllPossibleAnswers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [usedTrivia, setUsedTrivia] = useState([]);
 
-  //combines correct and incorrect answer into single array
+  // combines correct and incorrect answer into single array
   const combineAllAnswers = async (incorrect, correct) => {
     const allAnswers = [];
     incorrect.map((answer) => {
       allAnswers.push(answer);
     })
     allAnswers.push(correct);
-    //Randomize order of answers in array
+    // randomize order of answers in array
     allAnswers.sort(() => Math.random() - 0.5);
     setAllPossibleAnswers(allAnswers);
   }
@@ -38,6 +39,10 @@ export const useTrivia = () => {
     if (!trivia[progress]) {
       return;
     }
+    if (!usedTrivia.includes(trivia[progress].id)) {
+      setUsedTrivia([...usedTrivia, trivia[progress].id]);
+      console.log("Questions already answered: ", usedTrivia);
+    }
     setQuestion(trivia[progress].question);
     setCorrectAnswer(trivia[progress].correct_answer);
     const formattedIncorrectAnswers = trivia[progress].incorrect_answers.split(', ');
@@ -54,5 +59,6 @@ export const useTrivia = () => {
     error,
     question,
     allPossibleAnswers,
+    usedTrivia
   }
 }

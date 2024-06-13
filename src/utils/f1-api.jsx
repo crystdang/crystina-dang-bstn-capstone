@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { constructors } from '../data/constructors';
 
 export default class FormulaOneApi {
   constructor() {
@@ -25,7 +26,8 @@ export default class FormulaOneApi {
       return response.data.MRData.ConstructorTable.Constructors;
 
     } catch (error) {
-      console.error(`Unable to get circuit data: ${error}`);
+      console.error(`Unable to get constructors data: ${error}`);
+      return constructors;
     }
   }
 
@@ -36,7 +38,7 @@ export default class FormulaOneApi {
       return response.data.MRData.DriverTable.Drivers;
 
     } catch (error) {
-      console.error(`Unable to get circuit data: ${error}`);
+      console.error(`Unable to get drivers data: ${error}`);
     }
   }
 }

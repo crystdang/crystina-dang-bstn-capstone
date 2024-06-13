@@ -20,11 +20,10 @@ function FuturePage() {
   }
   , []);
 
-  console.log(nextRace.date + nextRace.time)
   return (
     <div className="future-page">
       <Header />
-      {loading ? 
+      {loading || !nextRace ? 
         <Loading /> :
         <div className="future-page__main" >
           <h1 className="future-page__title">
