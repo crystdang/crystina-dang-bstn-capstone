@@ -86,11 +86,11 @@ Install dependencies
 
 Create a database:
 
-1. Ensure that your MySQL server is running.
+1. Ensure that your PostGres server is running.
 
-2. Create a new MySQL database for the project.
+2. Create a new PostGres database for the project.
 
-3. Create an .env file in the server using the .env.sample as an example. Update the database configuration in the .env file with your MySQL credentials and database name.
+3. Create an .env file in the server using the .env.sample as an example. Update the database configuration in the .env file with your PostGres credentials and database name.
 
 4. Run database migrations to create tables:
 
