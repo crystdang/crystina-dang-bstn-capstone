@@ -7,7 +7,7 @@ import DriveButton from '../../components/DriveButton/DriveButton';
 import TriviaModal from '../../components/TriviaModal/TriviaModal';
 import Loading from '../../components/Loading/Loading';
 import Landing from '../../components/Landing/Landing';
-import { useTrivia } from '../../utils/trivia';
+import { useTrivia } from '../../utils/trivia-handler';
 import { useHandleModal } from '../../utils/modal';
 import { useEffect, useState } from 'react';
 import "./MainPage.scss";
