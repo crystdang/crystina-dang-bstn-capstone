@@ -33,10 +33,6 @@ export const useHandleModal = () => {
     setTrackProgress(trackProgress + 1);
     setModal(true);
   }
-  
-  // const storeAnswered = (input) => {
-    
-  // }
 
   const handleTrivia = (selected, correct) => {
 
