@@ -22,11 +22,30 @@ export const useTrivia = () => {
     allAnswers.sort(() => Math.random() - 0.5);
     setAllPossibleAnswers(allAnswers);
   }
+
+  function shuffle(array) {
+    let currentIndex = array.length;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
+
   const fetchData = async () => {
     setLoading(true);
     try {
       const fetchedData = await formulaZeroApi.getAllTrivia();
-      setTrivia(fetchedData);
+      //randomize order of trivia in array
+      const randomizedTrivia = shuffle(fetchedData);
+      setTrivia(randomizedTrivia);
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -37,11 +56,13 @@ export const useTrivia = () => {
   
   const fetchTrivia = async (progress) => {
     if (!trivia[progress]) {
+      console.log("No trivia");
       return;
     }
     if (!usedTrivia.includes(trivia[progress].id)) {
       setUsedTrivia([...usedTrivia, trivia[progress].id]);
     }
+    console.log("Fetching trivia....");
     setQuestion(trivia[progress].question);
     setCorrectAnswer(trivia[progress].correct_answer);
     const formattedIncorrectAnswers = trivia[progress].incorrect_answers.split(', ');

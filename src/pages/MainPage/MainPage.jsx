@@ -8,7 +8,7 @@ import TriviaModal from '../../components/TriviaModal/TriviaModal';
 import Loading from '../../components/Loading/Loading';
 import Landing from '../../components/Landing/Landing';
 import { useTrivia } from '../../utils/trivia-handler';
-import { useHandleModal } from '../../utils/modal';
+import { useHandleModal } from '../../utils/modal-handler';
 import { useEffect, useState } from 'react';
 import "./MainPage.scss";
 import { useHandleLanding } from '../../utils/landing-handler';
