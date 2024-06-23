@@ -44,8 +44,8 @@ export const useTrivia = () => {
     try {
       const fetchedData = await formulaZeroApi.getAllTrivia();
       //randomize order of trivia in array
-      const randomizedTrivia = shuffle(fetchedData);
-      setTrivia(randomizedTrivia);
+      shuffle(fetchedData);
+      setTrivia(fetchedData);
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -56,13 +56,11 @@ export const useTrivia = () => {
   
   const fetchTrivia = async (progress) => {
     if (!trivia[progress]) {
-      console.log("No trivia");
       return;
     }
     if (!usedTrivia.includes(trivia[progress].id)) {
       setUsedTrivia([...usedTrivia, trivia[progress].id]);
     }
-    console.log("Fetching trivia....");
     setQuestion(trivia[progress].question);
     setCorrectAnswer(trivia[progress].correct_answer);
     const formattedIncorrectAnswers = trivia[progress].incorrect_answers.split(', ');
