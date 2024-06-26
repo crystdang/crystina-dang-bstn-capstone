@@ -6,7 +6,6 @@ function CheatSheet({
   trivia,
   handleClose
 }) {
-  
 
   return (
     <div className="cheat-sheet">
@@ -17,9 +16,9 @@ function CheatSheet({
           alt="Close Icon"
           onClick={handleClose}
         />
-      {!usedTrivia ? 
+      {(usedTrivia.length === 0) ? 
       <h1 className="cheat-sheet__none">
-        No questions were answered
+        Answer a question to store it here.
       </h1> : 
       <div className="cheat-sheet__body">
         {usedTrivia.map((each) => {

@@ -7,9 +7,10 @@
 
   &__container {
     margin-top: 3rem;
-    margin-left: 5rem;
+    margin-left: 4rem;
     @include tablet {
       margin-top: 4rem;
+      margin-left: 5rem;
     }
   }
   &__answered {

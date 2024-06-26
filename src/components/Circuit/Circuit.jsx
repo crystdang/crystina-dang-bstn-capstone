@@ -11,7 +11,7 @@ function Circuit ({
       <div className="circuit__main">
         <img className="circuit__image" 
           src={image} 
-          alt='mtl track' 
+          alt='circuit' 
         />
       </div>
     </section>

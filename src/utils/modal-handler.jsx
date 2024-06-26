@@ -1,16 +1,16 @@
 import { useState } from "react";
-import MtlTrack from '../assets/images/SVG/track-grey.svg';
-import RainbowTrack from '../assets/images/SVG/track-rainbow-all.svg';
 import { drsZones } from "./mtl-data";
 
 export const useHandleModal = () => {
 
   const [modal, setModal] = useState(false);
   const [place, setPlace] = useState(20);
-  const [trackProgressImage, setTrackProgressImage] = useState(MtlTrack);
-  const [trackProgress, setTrackProgress] = useState(0);
+  const [currentCircuit,  setCurrentCircuit] = useState("spain");
+  const [trackProgressImage, setTrackProgressImage] = useState(`/${currentCircuit}/track-grey.svg`);
+  const [trackProgress, setTrackProgress] = useState(-1);
   const [answered, setAnswered] = useState([]);
   const [time, setTime] = useState("0");
+  const [trackMax, setTrackMax] = useState(0);
 
   const placeSuffix = (input) => {
     if (input === 1) {
@@ -26,8 +26,6 @@ export const useHandleModal = () => {
 
   const handleModal = () => {
     if (trackProgress > 13) {
-      setTrackProgressImage(RainbowTrack);
-      console.log(trackProgress);
       return setModal(false);
     }
     setTrackProgress(trackProgress + 1);
@@ -54,6 +52,12 @@ export const useHandleModal = () => {
         setAnswered([...answered, "correct, +1"]);
         setTime("+ 1");
       } else {
+        if (trackProgress === 1) {
+          console.log("Starting");
+        }
+        if (drsZones.includes(trackProgress)) {
+          console.log("DRS Zone");
+        }
         setAnswered([...answered, "incorrect, 0"]);
         setTime("0");
       }
@@ -61,12 +65,12 @@ export const useHandleModal = () => {
 
     if (trackProgress > 13) {
       verifyAnswer(selected);
-      setTrackProgressImage(RainbowTrack);
+      setTrackProgressImage(`/${currentCircuit}/track-rainbow-all.svg`);
       return setModal(false);
     }
     setModal(false);
     verifyAnswer(selected);
-    setTrackProgressImage(`/track-${trackProgress}.svg`);
+    setTrackProgressImage(`/${currentCircuit}/track-${trackProgress}.svg`);
   }
 
   return {
